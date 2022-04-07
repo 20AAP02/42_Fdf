@@ -1,5 +1,6 @@
 CC	= gcc
 CFLAGS	= -Wall -Wextra -Werror -D BUFFER_SIZE=1
+MINILIBX = -lmlx -framework OpenGL -framework AppKit
 LIB1	= ar -rcs
 LIB2	= ranlib
 RM	= rm -f
@@ -8,7 +9,7 @@ NAME	= libft.a
 
 INCLUDE0	= ft_printf/
 INCLUDE1	= 42_libft/
-INCLUDE2	= get_next_line/
+INCLUDE2	= fdf_dir/
 
 FT_PRINTF	= ft_printf/ft_printf_functions0.c ft_printf/ft_printf_functions1.c ft_printf/ft_printf_functions2.c \
 					ft_printf/ft_printf_functions3.c ft_printf/ft_printf_functions4.c ft_printf/ft_printf_functions5.c \
@@ -26,25 +27,33 @@ LIBFT	= 42_libft/ft_isascii.c 42_libft/ft_isprint.c 42_libft/ft_isalpha.c 42_lib
 					42_libft/ft_strchr.c 42_libft/get_next_line.c
 LIB_OBJ	= $(LIBFT:.c=.o)
 
-all:	$(NAME) clean
+FDF_LIB	= fdf_dir/geo_funcs/ft_draw_line.c fdf_dir/img_funcs/ft_color_img_pixel.c fdf_dir/img_funcs/ft_draw_diamond.c \
+					fdf_dir/img_funcs/ft_fill_img.c
+FDF_LIB_OBJ = $(FDF_LIB:.c=.o)
 
-$(NAME):	compile $(PRINTF_OBJ) $(LIB_OBJ) $(INCLUDE0) $(INCLUDE1)
-	$(LIB1) $(NAME) $(PRINTF_OBJ) $(LIB_OBJ)
-	$(LIB2) $(NAME)
+all:	$(NAME) fdf clean
+
+fdf:	$(NAME) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
+	echo "Compiling fdf..."
+	$(CC) $(CFLAGS) -I$(INCLUDE0) -I$(INCLUDE1) -I$(INCLUDE2) $(MINILIBX) main.c libft.a -o fdf
+	$(RM) $(NAME)
 	echo "Done"
 
-compile:
+$(NAME): $(PRINTF_OBJ) $(LIB_OBJ) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
 	echo "Compiling libft..."
+	$(LIB1) $(NAME) $(PRINTF_OBJ) $(LIB_OBJ) $(FDF_LIB_OBJ)
+	$(LIB2) $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -I$(INCLUDE0) -I$(INCLUDE1) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -I$(INCLUDE0) -I$(INCLUDE1) -I$(INCLUDE2) -c $< -o $(<:.c=.o)
 
 clean:
 	$(RM) $(LIB_OBJ) $(PRINTF_OBJ)
 
 fclean:	clean
+	$(RM) fdf
 	$(RM) $(NAME)
 
-re: all clean
+re: clean all
 
 .PHONY: all
