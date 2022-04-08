@@ -17,6 +17,7 @@ int	main(void)
 	int		size_x;
 	int		size_y;
 	t_img	img_bg;
+	t_ln	line;
 
 	// initialize the connection between the program and the display
 	mlx_ptr = mlx_init();
@@ -32,27 +33,12 @@ int	main(void)
 	img_bg.width = size_x;
 	img_bg.height = size_y;
 	img_bg.img_ptr = mlx_new_image(mlx_ptr, img_bg.width, img_bg.height);
-
-	// get info from image so that i can modify it
 	img_bg.buffer = mlx_get_data_addr(img_bg.img_ptr, &img_bg.pixel_bits, &img_bg.line_bytes, &img_bg.endian);
 	ft_fill_img(mlx_ptr, img_bg, 0x3a3d42);
-	// put image in the screen
+	line = ft_init_line(0, 0, 500, 500);
+	ft_draw_line(mlx_ptr, img_bg, line, 0xFFFFFF);
 	mlx_put_image_to_window(mlx_ptr, win_ptr, img_bg.img_ptr, 0, 0);
-
-	mlx_loop(mlx_ptr);
-	/*
-
-	// destroys image
-	mlx_destroy_image(mlx_ptr, img_ptr);
-
-	mlx_string_put(mlx_ptr, win_ptr, 440, 500, 0xe8e7e6, "Hello world");
-
-	// clears window (in black)
-	mlx_clear_window(mlx_ptr, win_ptr);
-
-	// destroys window
-	mlx_destroy_window(mlx_ptr, win_ptr);
-	*/
+	mlx_loop(win_ptr);
 
 	return (0);
 }

@@ -18,6 +18,13 @@ typedef struct t_image
 	int	height;
 }		t_img;
 
+typedef struct t_info
+{
+	void	*win;
+	void	*mlx;
+	t_img	*img;
+}			t_inf;
+
 typedef struct t_point
 {
 	int	x;
@@ -34,5 +41,12 @@ void	ft_color_img_pixel(t_img img, int pixel, int color);
 void	ft_fill_img(void *mlx_ptr, t_img img, int color);
 void	ft_draw_line(void *mlx_ptr, t_img img, t_ln line, int color);
 void	ft_draw_diamond(void *mlx_ptr, t_img img, int color);
+int		ft_close(int keycode, t_inf info);
+int		ft_key_press(int keycode, t_inf info);
+void	setup_controls(t_inf info);
+int		ft_mouse_move(int keycode, t_inf info);
+int		ft_mouse_press(int keycode, t_inf info);
+int		ft_mouse_release(int keycode, t_inf info);
+t_ln	ft_init_line(int x0, int y0, int x1, int y1);
 
 #endif

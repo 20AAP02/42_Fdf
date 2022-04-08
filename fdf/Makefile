@@ -28,7 +28,9 @@ LIBFT	= 42_libft/ft_isascii.c 42_libft/ft_isprint.c 42_libft/ft_isalpha.c 42_lib
 LIB_OBJ	= $(LIBFT:.c=.o)
 
 FDF_LIB	= fdf_dir/geo_funcs/ft_draw_line.c fdf_dir/img_funcs/ft_color_img_pixel.c fdf_dir/img_funcs/ft_draw_diamond.c \
-					fdf_dir/img_funcs/ft_fill_img.c
+					fdf_dir/img_funcs/ft_fill_img.c fdf_dir/hooks/ft_close.c fdf_dir/hooks/ft_key_press.c fdf_dir/hooks/ft_mouse_move.c \
+					fdf_dir/hooks/ft_mouse_press.c fdf_dir/hooks/ft_mouse_release.c fdf_dir/hooks/ft_setup_hooks.c \
+					fdf_dir/geo_funcs/ft_init_line.c
 FDF_LIB_OBJ = $(FDF_LIB:.c=.o)
 
 .PHONY: all re fclean clean compile_fdf compile_libft
