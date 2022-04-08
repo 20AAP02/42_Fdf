@@ -31,16 +31,15 @@ FDF_LIB	= fdf_dir/geo_funcs/ft_draw_line.c fdf_dir/img_funcs/ft_color_img_pixel.
 					fdf_dir/img_funcs/ft_fill_img.c
 FDF_LIB_OBJ = $(FDF_LIB:.c=.o)
 
-all:	$(NAME) fdf clean
+.PHONY: all re fclean clean compile_fdf compile_libft
 
-fdf:	$(NAME) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
-	echo "Compiling fdf..."
+all:	fdf clean
+
+fdf:	compile_libft $(NAME) compile_fdf
 	$(CC) $(CFLAGS) -I$(INCLUDE0) -I$(INCLUDE1) -I$(INCLUDE2) $(MINILIBX) main.c libft.a -o fdf
-	$(RM) $(NAME)
 	echo "Done"
 
-$(NAME): $(PRINTF_OBJ) $(LIB_OBJ) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
-	echo "Compiling libft..."
+$(NAME): $(PRINTF_OBJ) $(LIB_OBJ) $(FDF_LIB_OBJ) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
 	$(LIB1) $(NAME) $(PRINTF_OBJ) $(LIB_OBJ) $(FDF_LIB_OBJ)
 	$(LIB2) $(NAME)
 
@@ -48,12 +47,16 @@ $(NAME): $(PRINTF_OBJ) $(LIB_OBJ) $(INCLUDE0) $(INCLUDE1) $(INCLUDE2)
 	$(CC) $(CFLAGS) -I$(INCLUDE0) -I$(INCLUDE1) -I$(INCLUDE2) -c $< -o $(<:.c=.o)
 
 clean:
-	$(RM) $(LIB_OBJ) $(PRINTF_OBJ)
+	$(RM) $(LIB_OBJ) $(PRINTF_OBJ) $(FDF_LIB_OBJ)
+	$(RM) $(NAME)
 
 fclean:	clean
 	$(RM) fdf
-	$(RM) $(NAME)
 
 re: clean all
 
-.PHONY: all
+compile_fdf:
+	echo "Compiling fdf..."
+
+compile_libft:
+	echo "Compiling libft..."
