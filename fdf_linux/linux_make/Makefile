@@ -1,13 +1,18 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -D BUFFER_SIZE=1
 RM		= rm -f
 
 NAME	= fdf
 
-INCLUDE_FDF	= sources/
+INCLUDE_FDF			= sources/
+INCLUDE_LIBFT		= 42_libft/
+INCLUDE_FT_PRINTF	= ft_printf/
 
-OBJ_FILES	:= main.c $(shell find sources/ -name '*.c')
-OBJS	= $(OBJ_FILES:.c=.o)
+OBJ_FT_PRINTF	:= $(shell find ft_printf/ -name '*.c')
+OBJ_LIBFT		:= $(shell find 42_libft/ -name '*.c')
+OBJ_FDF			:= main.c $(shell find sources/ -name '*.c')
+
+OBJS	= $(OBJ_FDF:.c=.o) $(OBJ_LIBFT:.c=.o) $(OBJ_FT_PRINTF:.c=.o)
 
 .PHONY: all clean fclean re
 
@@ -18,7 +23,7 @@ $(NAME): $(OBJS)
 	$(RM) $(OBJS)
 
 .c.o:
-	$(CC) $(CFLAGS) -I$(INCLUDE_FDF) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INCLUDE_FDF) -I$(INCLUDE_LIBFT) -I$(INCLUDE_FT_PRINTF) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

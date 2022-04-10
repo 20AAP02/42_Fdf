@@ -3,6 +3,7 @@
 
 #include <mlx.h>
 #include <math.h>
+#include <libft.h>
 #include <stdio.h> // printf
 #include <stdlib.h> // abs
 
