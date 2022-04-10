@@ -6,10 +6,10 @@ NAME	= fdf
 
 INCLUDE_FDF	= sources/
 
-OBJ_FILES	= main.c $(wildcard sources/*.c)
-OBJS			= $(OBJ_FILES:.c=.o)
+OBJ_FILES	:= main.c $(shell find sources/ -name '*.c')
+OBJS	= $(OBJ_FILES:.c=.o)
 
-.PHONY: all clean fclean re $(MAKE)
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
