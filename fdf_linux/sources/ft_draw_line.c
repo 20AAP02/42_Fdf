@@ -16,17 +16,6 @@ int ft_sy(t_pt a, t_pt b)
 		return (-1);
 }
 
-int	ft_calc_slope(t_pt a, t_pt b)
-{
-	float	m;
-
-	if (b.x - a.x != 0)
-		m = (b.y - a.y)/(b.x - a.x);
-	else
-		m = 1;
-	return ((int)(m * 10));
-}
-
 void	ft_vertical_line()
 {
 	printf("VERTICAL LINE\n");
@@ -45,11 +34,6 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 	int err;
 	int e2;
 
-	if (line.a.x == line.b.x)
-	{
-		ft_vertical_line();
-		return ;
-	}
 	if (img->pixel_bits != 32)
 		color = mlx_get_color_value(mlx_ptr, color);
 	dx = abs(line.b.x - line.a.x);
@@ -59,7 +43,7 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 	sy = ft_sy(line.a, line.b);
 	x = line.a.x;
 	y = line.a.y;
-	while (x != line.b.x)
+	while (x != line.b.x || y != line.b.y)
 	{
 		pixel = (y * img->line_bytes) + (x * 4);
 		ft_color_img_pixel(img, pixel, color);
