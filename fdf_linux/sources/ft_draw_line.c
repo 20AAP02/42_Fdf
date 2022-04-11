@@ -33,7 +33,7 @@ void	ft_vertical_line()
 	return ;
 }
 
-void	ft_draw_line(void *mlx_ptr, t_img img, t_ln line, int color)
+void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 {
 	int pixel;
 	int x;
@@ -50,7 +50,7 @@ void	ft_draw_line(void *mlx_ptr, t_img img, t_ln line, int color)
 		ft_vertical_line();
 		return ;
 	}
-	if (img.pixel_bits != 32)
+	if (img->pixel_bits != 32)
 		color = mlx_get_color_value(mlx_ptr, color);
 	dx = abs(line.b.x - line.a.x);
 	dy = abs(line.b.y - line.a.y) * (-1);
@@ -61,7 +61,7 @@ void	ft_draw_line(void *mlx_ptr, t_img img, t_ln line, int color)
 	y = line.a.y;
 	while (x != line.b.x)
 	{
-		pixel = (y * img.line_bytes) + (x * 4);
+		pixel = (y * img->line_bytes) + (x * 4);
 		ft_color_img_pixel(img, pixel, color);
 		e2 = 2 * err;
 		if (e2 >= dy)
