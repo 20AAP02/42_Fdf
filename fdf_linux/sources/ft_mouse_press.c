@@ -6,5 +6,5 @@ int	ft_mouse_press(int keycode, t_inf info)
 	if (keycode)
 		return (ft_close(keycode, info));
 	else
-		return (0);
+		return (printf("click\n"));
 }

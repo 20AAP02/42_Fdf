@@ -44,7 +44,7 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color);
 void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color);
 int		ft_close(int keycode, t_inf info);
 int		ft_key_press(int keycode, t_inf info);
-void	setup_controls(t_inf info);
+void	ft_setup_hooks(t_inf *info);
 int		ft_mouse_move(int keycode, t_inf info);
 int		ft_mouse_press(int keycode, t_inf info);
 int		ft_mouse_release(int keycode, t_inf info);

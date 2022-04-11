@@ -3,8 +3,10 @@
 int	ft_close(int keycode, t_inf info)
 {
 	if (keycode)
-		mlx_destroy_window(info.mlx, info.win);
+		exit(0);
 	else
-		mlx_destroy_window(info.mlx, info.win);
+		exit(0);
+	
+	printf("%p\n", &info);
 	return (0);
 }
