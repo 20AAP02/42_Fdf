@@ -16,12 +16,6 @@ int ft_sy(t_pt a, t_pt b)
 		return (-1);
 }
 
-void	ft_vertical_line()
-{
-	printf("VERTICAL LINE\n");
-	return ;
-}
-
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 {
 	int pixel;
