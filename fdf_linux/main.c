@@ -6,8 +6,6 @@ int	main(void)
 	void	*win;
 	t_img	img;
 	t_inf	*info;
-	t_ln	line;
-
 
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 1000, 1000, "Map Generator");
@@ -16,8 +14,6 @@ int	main(void)
 	img.img_ptr = mlx_new_image(mlx, img.width, img.height);
 	img.buffer = mlx_get_data_addr(img.img_ptr, &img.pixel_bits, &img.line_bytes, &img.endian);
 	ft_fill_img(mlx, &img, 0x3a3d42);
-	line = ft_init_line(0, 0, 999, 999);
-	ft_draw_line(mlx, &img, line, 0xFFFF);
 	ft_draw_diamond(mlx, &img, 0xFFF);
 	mlx_put_image_to_window(mlx, win, img.img_ptr, 0, 0);
 	info = malloc(sizeof(t_inf));
