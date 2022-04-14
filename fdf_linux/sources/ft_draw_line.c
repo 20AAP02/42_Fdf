@@ -1,6 +1,6 @@
 #include <fdf.h>
 
-void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
+typedef struct
 {
 	int pixel;
 	int x;
@@ -10,31 +10,37 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 	int sx;
 	int sy;
 	int err;
-	int e2;
+	int e2;	
+}		line_vars;
+
+
+void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
+{
+	line_vars	vars;
 
 	if (img->pixel_bits != 32)
 		color = mlx_get_color_value(mlx_ptr, color);
-	dx = abs(line.b.x - line.a.x);
-	dy = abs(line.b.y - line.a.y) * (-1);
-	err = dx + dy;
-	sx = ft_x_direction(line.a, line.b);
-	sy = ft_y_direction(line.a, line.b);
-	x = line.a.x;
-	y = line.a.y;
-	while (x != line.b.x || y != line.b.y)
+	vars.dx = abs(line.b.x - line.a.x);
+	vars.dy = abs(line.b.y - line.a.y) * (-1);
+	vars.err = vars.dx + vars.dy;
+	vars.sx = ft_x_direction(line.a, line.b);
+	vars.sy = ft_y_direction(line.a, line.b);
+	vars.x = line.a.x;
+	vars.y = line.a.y;
+	while (vars.x != line.b.x || vars.y != line.b.y)
 	{
-		pixel = (y * img->line_bytes) + (x * 4);
-		ft_color_img_pixel(img, pixel, color);
-		e2 = 2 * err;
-		if (e2 >= dy)
+		vars.pixel = (vars.y * img->line_bytes) + (vars.x * 4);
+		ft_color_img_pixel(img, vars.pixel, color);
+		vars.e2 = 2 * vars.err;
+		if (vars.e2 >= vars.dy)
 		{
-			err += dy;
-			x += sx;
+			vars.err += vars.dy;
+			vars.x += vars.sx;
 		}
-		if (e2 <= dx)
+		if (vars.e2 <= vars.dx)
 		{
-			err += dx;
-			y += sy;
+			vars.err += vars.dx;
+			vars.y += vars.sy;
 		}
 	}
 }
