@@ -1,21 +1,5 @@
 #include <fdf.h>
 
-int ft_sx(t_pt a, t_pt b)
-{
-	if (b.x > a.x)
-		return (1);
-	else
-		return (-1);
-}
-
-int ft_sy(t_pt a, t_pt b)
-{
-	if (b.y > a.y)
-		return (1);
-	else
-		return (-1);
-}
-
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 {
 	int pixel;
@@ -33,8 +17,8 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 	dx = abs(line.b.x - line.a.x);
 	dy = abs(line.b.y - line.a.y) * (-1);
 	err = dx + dy;
-	sx = ft_sx(line.a, line.b);
-	sy = ft_sy(line.a, line.b);
+	sx = ft_x_direction(line.a, line.b);
+	sy = ft_y_direction(line.a, line.b);
 	x = line.a.x;
 	y = line.a.y;
 	while (x != line.b.x || y != line.b.y)

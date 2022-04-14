@@ -49,5 +49,7 @@ int		ft_mouse_move(int keycode, t_inf info);
 int		ft_mouse_press(int keycode, t_inf info);
 int		ft_mouse_release(int keycode, t_inf info);
 t_ln	ft_init_line(int x0, int y0, int x1, int y1);
+int		ft_y_direction(t_pt a, t_pt b);
+int		ft_x_direction(t_pt a, t_pt b);
 
 #endif
