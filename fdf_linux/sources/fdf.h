@@ -1,6 +1,8 @@
 #ifndef FDF_H
 # define FDF_H
 
+# define ESC 53
+
 #include <mlx.h>
 #include <math.h>
 #include <libft.h>
@@ -39,7 +41,6 @@ typedef struct t_line
 	t_pt	b;
 }			t_ln;
 
-
 void	ft_color_img_pixel(t_img *img, int pixel, int color);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color);
@@ -57,5 +58,6 @@ int		**ft_read_fdf_file(char *file_name);
 int		ft_n_lines_file(char *file_name);
 void	ft_cpy_ln_to_intArr(int **map, char *str, int i);
 void	ft_free_map(int **map);
+void	ft_draw_map(void *mlx, t_img *img, int color, int **map);
 
 #endif
