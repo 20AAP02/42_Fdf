@@ -4,6 +4,7 @@
 #include <mlx.h>
 #include <math.h>
 #include <libft.h>
+#include <ft_printf.h> // ft_printf
 #include <stdio.h> // printf
 #include <stdlib.h> // abs
 #include <fcntl.h> // open, close, read ...
@@ -53,5 +54,8 @@ t_ln	ft_init_line(int x0, int y0, int x1, int y1);
 int		ft_y_direction(t_pt a, t_pt b);
 int		ft_x_direction(t_pt a, t_pt b);
 int		**ft_read_fdf_file(char *file_name);
+int		ft_n_lines_file(char *file_name);
+void	ft_cpy_ln_to_intArr(int **map, char *str, int i);
+void	ft_free_map(int **map);
 
 #endif

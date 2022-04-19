@@ -13,6 +13,7 @@ int	main(int argc, char **argv)
 	map = ft_read_fdf_file(argv[1]);
 	if (!map)
 		return (0);
+	ft_free_map(map);
 	// Create window and such
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 1000, 1000, "Map Generator");

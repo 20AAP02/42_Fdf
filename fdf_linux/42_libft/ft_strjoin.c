@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:18:55 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/04/10 16:34:35 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:07:48 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	if (!s1 || !s2)
+	if (!s2)
 		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (s1 && s1[i])
 		i++;
 	j = 0;
 	while (s2[j])
@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!new_str)
 		return (NULL);
 	i = 0;
-	while (*s1)
+	while (s1 && *s1)
 		new_str[i++] = *s1++;
 	while (*s2)
 		new_str[i++] = *s2++;

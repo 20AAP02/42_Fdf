@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:50:38 by antonio           #+#    #+#             */
-/*   Updated: 2022/04/10 16:34:15 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:13:51 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_get_line(char *save)
 	char	*s;
 
 	i = 0;
-	if (!save[i])
+	if (!save || *save == 0)
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2));
+	s = malloc(sizeof(char) * (i + 2));
 	if (!s)
 		return (NULL);
 	i = 0;
