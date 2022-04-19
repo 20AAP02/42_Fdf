@@ -36,7 +36,7 @@ int	main(void)
 	img_bg.buffer = mlx_get_data_addr(img_bg.img_ptr, &img_bg.pixel_bits, &img_bg.line_bytes, &img_bg.endian);
 	ft_fill_img(mlx_ptr, img_bg, 0x3a3d42);
 	line = ft_init_line(0, 0, 500, 500);
-	ft_draw_line(mlx_ptr, img_bg, line, 0xFFFFFF);
+	//ft_draw_line(mlx_ptr, img_bg, line, 0xFFFFFF);
 	mlx_put_image_to_window(mlx_ptr, win_ptr, img_bg.img_ptr, 0, 0);
 	mlx_loop(win_ptr);
 
