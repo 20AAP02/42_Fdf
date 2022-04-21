@@ -25,7 +25,7 @@ void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf)
 		color = mlx_get_color_value(mlx, color);
 	pt_dist = ft_calculate_pt_dist(map_inf->width, img->width, map_inf->height, img->height);
 	img_Ycenter = (img->height - (map_inf->height * pt_dist)) / 2;
-	img_Xcenter = (img->width - (map_inf->width * pt_dist));
+	img_Xcenter = (img->width - (map_inf->width * pt_dist)) / 2;
 	y = 0;
 	while (map_inf->map[y])
 	{
@@ -33,7 +33,7 @@ void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf)
 		while (x < map_inf->width)
 		{
 			pixel = (((y * pt_dist) + img_Ycenter) * img->line_bytes) + (((x * pt_dist) + img_Xcenter) * 4);
-			ft_color_img_pixel(img, pixel, color * map_inf->map[y][x]);
+			ft_color_img_pixel(img, pixel, color + (map_inf->map[y][x] * 100));
 			x++;
 		}
 		y++;

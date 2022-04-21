@@ -38,7 +38,7 @@ t_map	*ft_read_fdf_file(char *file_name)
 	map_inf->map[ft_n_lines_file(file_name)] = NULL;
 	i = 0;
 	str = get_next_line(fd);
-	map_inf->width = ft_count_number_digs(str);
+	map_inf->width = ft_count_number_digs(str) - 1;
 	while (str)
 	{
 		map_inf->map[i] = malloc(sizeof(int) * ft_count_number_digs(str));
