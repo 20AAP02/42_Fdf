@@ -2,9 +2,9 @@
 
 void	ft_cpy_ln_to_intArr(int **map, char *str, int i)
 {
-	int	a;
-	int	b;
-	int	map_index;
+	int		a;
+	int		b;
+	int		map_index;
 	char	*str_n;
 
 	a = 0;
@@ -17,7 +17,7 @@ void	ft_cpy_ln_to_intArr(int **map, char *str, int i)
 		if (b - a > 0)
 		{
 			str_n = ft_substr(str, a, b);
-			map[i][map_index] = atoi(str_n);
+			map[i][map_index] = ft_atoi(str_n);
 			free(str_n);
 			map_index++;
 		}
