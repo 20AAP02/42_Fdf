@@ -8,6 +8,8 @@ void	ft_altitude_range(t_map *map_inf)
 	int	max;
 
 	y = 0;
+	min = 0;
+	max = 0;
 	while (map_inf->map[y])
 	{
 		x = 0;

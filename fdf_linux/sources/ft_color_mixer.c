@@ -10,11 +10,9 @@
 int	ft_color_mixer(int range[2], int altitude)
 {
 	float	slope;
-	int		range_v;
 	float	b;
 	int		y;
 
-	range_v = abs(range[1] - range[0]);
 	slope = (float)6 / ((float)range[1] - (float)range[0]);
 	b = (float)1 - (slope * (float)range[0]);
 	y = (int)((slope * (float)altitude) + b);
