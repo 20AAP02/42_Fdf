@@ -16,5 +16,6 @@ int	ft_n_lines_file(char *file_name)
 			count++;
 		n = read(fd, str, sizeof(char));
 	}
+	close(fd);
     return (count);
 }

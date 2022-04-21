@@ -6,8 +6,6 @@ void	ft_fill_img(void *mlx_ptr, t_img *img, int color)
 	int	x;
 	int	y;
 
-	if (img->pixel_bits != 32)
-		color = mlx_get_color_value(mlx_ptr, color);
 	y = 0;
 	while (y < img->height)
 	{
@@ -15,7 +13,7 @@ void	ft_fill_img(void *mlx_ptr, t_img *img, int color)
 		while (x < img->width)
 		{
 			pixel = (y * img->line_bytes) + (x * 4);
-			ft_color_img_pixel(img, pixel, color);
+			ft_color_img_pixel(img, pixel, color, mlx_ptr);
 			x++;
 		}
 		y++;

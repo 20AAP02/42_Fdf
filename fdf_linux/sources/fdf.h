@@ -35,6 +35,12 @@ typedef struct t_point
 	int	y;
 }		t_pt;
 
+typedef struct t_3dPoint
+{
+	int	altitude;
+	int	color;
+}		t_3dPt;
+
 typedef struct t_line
 {
 	t_pt	a;
@@ -43,13 +49,15 @@ typedef struct t_line
 
 typedef struct t_2dMap
 {
-	int	**map;
-	int	width;
-	int height;
-}		t_map;
+	t_3dPt	**map;
+	int		width;
+	int 	height;
+	int		color_check;
+	int		range[2];
+}			t_map;
 
 
-void	ft_color_img_pixel(t_img *img, int pixel, int color);
+void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color);
 void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color);
@@ -64,8 +72,11 @@ int		ft_y_direction(t_pt a, t_pt b);
 int		ft_x_direction(t_pt a, t_pt b);
 t_map	*ft_read_fdf_file(char *file_name);
 int		ft_n_lines_file(char *file_name);
-void	ft_cpy_ln_to_intArr(int **map, char *str, int i);
+void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i);
 void	ft_free_map(t_map *map_inf);
 void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf);
+int		ft_color_mixer(int range[2], int altitude);
+int		ft_map_color_check(t_map *map_inf);
+void	ft_altitude_range(t_map *map_inf);
 
 #endif

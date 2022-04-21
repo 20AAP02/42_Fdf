@@ -18,8 +18,6 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 {
 	line_vars	vars;
 
-	if (img->pixel_bits != 32)
-		color = mlx_get_color_value(mlx_ptr, color);
 	vars.dx = abs(line.b.x - line.a.x);
 	vars.dy = abs(line.b.y - line.a.y) * (-1);
 	vars.err = vars.dx + vars.dy;
@@ -30,7 +28,7 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color)
 	while (vars.x != line.b.x || vars.y != line.b.y)
 	{
 		vars.pixel = (vars.y * img->line_bytes) + (vars.x * 4);
-		ft_color_img_pixel(img, vars.pixel, color);
+		ft_color_img_pixel(img, vars.pixel, color, mlx_ptr);
 		vars.e2 = 2 * vars.err;
 		if (vars.e2 >= vars.dy)
 		{

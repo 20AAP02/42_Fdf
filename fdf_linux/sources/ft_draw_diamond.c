@@ -8,8 +8,6 @@ void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color)
 	int c1 = (img->width / 2) - 1;
 	int c2 = (img->width / 2) + 1;
 
-	if (img->pixel_bits != 32)
-		color = mlx_get_color_value(mlx_ptr, color);
 	y = 0;
 	while (y < img->height)
 	{
@@ -19,7 +17,7 @@ void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color)
 			pixel = (y * img->line_bytes) + (x * 4);
 			if (x > c1 && x < c2 && y > (img->height / 4) && y < ((img->height / 4) * 3))
 				if ((pixel % 5 == 0) && (pixel % 3 == 0))
-					ft_color_img_pixel(img, pixel, color);
+					ft_color_img_pixel(img, pixel, color, mlx_ptr);
 			x++;
 		}
 

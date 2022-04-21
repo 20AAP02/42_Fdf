@@ -34,20 +34,21 @@ t_map	*ft_read_fdf_file(char *file_name)
 	if (fd == -1)
 		return (NULL);
 	map_inf = malloc(sizeof(t_map));
-	map_inf->map = malloc(sizeof(int *) * (ft_n_lines_file(file_name) + 2));
+	map_inf->map = malloc(sizeof(t_3dPt *) * (ft_n_lines_file(file_name) + 2));
 	map_inf->map[ft_n_lines_file(file_name)] = NULL;
 	i = 0;
 	str = get_next_line(fd);
 	map_inf->width = ft_count_number_digs(str) - 1;
 	while (str)
 	{
-		map_inf->map[i] = malloc(sizeof(int) * ft_count_number_digs(str));
+		map_inf->map[i] = malloc(sizeof(t_3dPt) * ft_count_number_digs(str));
 		ft_cpy_ln_to_intArr(map_inf->map, str, i);
 		free(str);
 		str = get_next_line(fd);
 		i++;
 	}
 	map_inf->height = i - 1;
+	map_inf->color_check = 0;
 	free(str);
 	close(fd);
 	return (map_inf);

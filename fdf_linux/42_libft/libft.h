@@ -116,4 +116,8 @@ char	*ft_save(char *save);
 
 char	*ft_read_and_save(int fd, char *save);
 
+int		ft_recursive_power(int nb, int power);
+
+int		ft_hexStr_toInt(char *str);
+
 #endif

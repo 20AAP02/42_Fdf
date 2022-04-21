@@ -1,9 +1,9 @@
 #include <fdf.h>
 
-#include <fdf.h>
-
-void	ft_color_img_pixel(t_img *img, int pixel, int color)
+void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx)
 {
+	if (img->pixel_bits != 32)
+		color = mlx_get_color_value(mlx, color);
 	if (img->endian)
 	{
 		img->buffer[pixel + 0] = (color >> 24);
