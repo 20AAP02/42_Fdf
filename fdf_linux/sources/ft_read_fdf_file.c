@@ -24,6 +24,8 @@ int	**ft_read_fdf_file(char *file_name)
 	if (!file_name || *file_name == 0)
 		return (NULL);
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+		return (NULL);
 	map = malloc(sizeof(int *) * (ft_n_lines_file(file_name) + 2));
 	map[ft_n_lines_file(file_name)] = NULL;
 	i = 0;

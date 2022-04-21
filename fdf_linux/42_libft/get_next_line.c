@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:50:38 by antonio           #+#    #+#             */
-/*   Updated: 2022/04/19 17:13:51 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:29:09 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char	*ft_read_and_save(int fd, char *save)
 {
 	char	*buff;
 	int		read_bytes;
+	char	*mem;
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
@@ -97,7 +98,9 @@ char	*ft_read_and_save(int fd, char *save)
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
+		mem = save;
 		save = ft_strjoin(save, buff);
+		free(mem);
 	}
 	free(buff);
 	return (save);
