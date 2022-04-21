@@ -48,7 +48,6 @@ t_map	*ft_read_fdf_file(char *file_name)
 		i++;
 	}
 	map_inf->height = i - 1;
-	map_inf->color_check = 0;
 	free(str);
 	close(fd);
 	return (map_inf);

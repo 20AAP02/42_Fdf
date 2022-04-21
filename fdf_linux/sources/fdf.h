@@ -52,7 +52,6 @@ typedef struct t_2dMap
 	t_3dPt	**map;
 	int		width;
 	int 	height;
-	int		color_check;
 	int		range[2];
 }			t_map;
 
