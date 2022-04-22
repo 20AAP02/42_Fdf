@@ -8,21 +8,16 @@ void	ft_altitude_range(t_map *map_inf)
 	int	max;
 
 	y = 0;
-	min = 0;
-	max = 0;
-	while (map_inf->map[y])
+	min = map_inf->map[0][0].altitude;
+	max = map_inf->map[0][0].altitude;
+	while (y < map_inf->height)
 	{
 		x = 0;
 		while (x < map_inf->width)
 		{
-			if (x == 0 && y == 0)
-			{
+			if (map_inf->map[y][x].altitude < min)
 				min = map_inf->map[y][x].altitude;
-				max = map_inf->map[y][x].altitude;
-			}
-			else if (map_inf->map[y][x].altitude < min)
-				min = map_inf->map[y][x].altitude;
-			else if (map_inf->map[y][x].altitude > max)
+			if (map_inf->map[y][x].altitude > max)
 				max = map_inf->map[y][x].altitude;
 			x++;
 		}

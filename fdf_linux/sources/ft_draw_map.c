@@ -25,11 +25,11 @@ void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf)
 	ft_altitude_range(map_inf);
 	color_check = ft_map_color_check(map_inf);
 	pt_dist = ft_calculate_pt_dist(map_inf->width, img->width, map_inf->height, img->height);
-	//pt_dist = 2;
+	//pt_dist = 1;
 	img_Ycenter = (img->height - (map_inf->height * pt_dist)) / 2;
 	img_Xcenter = (img->width - (map_inf->width * pt_dist)) / 2;
 	y = 0;
-	while (map_inf->map[y])
+	while (y < map_inf->height)
 	{
 		x = 0;
 		while (x < map_inf->width)

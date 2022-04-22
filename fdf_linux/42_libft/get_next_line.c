@@ -6,7 +6,7 @@
 /*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:50:38 by antonio           #+#    #+#             */
-/*   Updated: 2022/04/20 18:29:09 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/04/22 00:50:29 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ char	*ft_read_and_save(int fd, char *save)
 		if (read_bytes == -1)
 		{
 			free(buff);
+			if (save)
+				free(save);
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';

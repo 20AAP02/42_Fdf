@@ -1,5 +1,5 @@
 CC	= gcc
-CFLAGS	= -Wall -Wextra -Werror -D BUFFER_SIZE=1
+CFLAGS	= -Wall -Wextra -Werror -D BUFFER_SIZE=9000
 RM	= rm -f
 
 NAME	= fdf

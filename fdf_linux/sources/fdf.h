@@ -55,7 +55,6 @@ typedef struct t_2dMap
 	int		range[2];
 }			t_map;
 
-
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color);
