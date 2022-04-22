@@ -76,5 +76,7 @@ void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf);
 int		ft_color_mixer(int range[2], int altitude);
 int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
+void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf);
+int		ft_calculate_pt_dist(int map_width, int img_width, int map_height, int img_height);
 
 #endif
