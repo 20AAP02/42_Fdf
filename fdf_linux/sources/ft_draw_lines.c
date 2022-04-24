@@ -23,7 +23,9 @@ void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf)
             a.y = (y * map_inf->pt_dist) + map_inf->img_Ycenter;
             b.x = ((x + 1) * map_inf->pt_dist) + map_inf->img_Xcenter;
             line = ft_init_line(a.x, a.y, b.x, a.y);
-            ft_draw_line(mlx, img, line, map_inf);
+            line.colors[0] = map_inf->map[y][x].color;
+            line.colors[1] = map_inf->map[y][x + 1].color;
+            ft_draw_line(mlx, img, line);
             x++;
         }
         y++;
@@ -53,10 +55,11 @@ void    ft_draw_V_lines(void *mlx, t_img *img, t_map *map_inf)
             a.y = (y * map_inf->pt_dist) + map_inf->img_Ycenter;
             b.y = ((y + 1) * map_inf->pt_dist) + map_inf->img_Ycenter;
             line = ft_init_line(a.x, a.y, a.x, b.y);
-            ft_draw_line(mlx, img, line, map_inf);
+            line.colors[0] = map_inf->map[y][x].color;
+            line.colors[1] = map_inf->map[y + 1][x].color;
+            ft_draw_line(mlx, img, line);
             x++;
         }
         y++;
     }
-    printf("h: %i, w: %i\n", map_inf->height, map_inf->width);
 }

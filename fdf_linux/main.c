@@ -23,7 +23,6 @@ int	main(int argc, char **argv)
 	ft_fill_img(mlx, &img, 0x0);
 	ft_draw_map(map_inf);
 	ft_draw_H_lines(mlx, &img, map_inf);
-	printf("---------------------------------------------------------------------\n");
 	ft_draw_V_lines(mlx, &img, map_inf);
 	mlx_put_image_to_window(mlx, win, img.img_ptr, 0, 0);
 	ft_setup_hooks(&img, mlx, win);
