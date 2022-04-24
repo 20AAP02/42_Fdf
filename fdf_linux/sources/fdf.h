@@ -53,6 +53,9 @@ typedef struct t_2dMap
 	int		width;
 	int 	height;
 	int		range[2];
+	int		pt_dist;
+	int		img_Ycenter;
+	int		img_Xcenter;
 }			t_map;
 
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
@@ -72,11 +75,12 @@ t_map	*ft_read_fdf_file(char *file_name);
 int		ft_n_lines_file(char *file_name);
 void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i);
 void	ft_free_map(t_map *map_inf);
-void	ft_draw_map(void *mlx, t_img *img, int color, t_map *map_inf);
+void	ft_draw_map(t_map *map_inf);
 int		ft_color_mixer(int range[2], int altitude);
 int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
 void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf);
+void    ft_draw_V_lines(void *mlx, t_img *img, t_map *map_inf);
 int		ft_calculate_pt_dist(int map_width, int img_width, int map_height, int img_height);
 int		ft_linear_gradient(int colors[2], int altitude, int range[2]);
 
