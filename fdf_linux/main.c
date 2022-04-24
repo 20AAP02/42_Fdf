@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	img.img_ptr = mlx_new_image(mlx, img.width, img.height);
 	img.buffer = mlx_get_data_addr(img.img_ptr, &img.pixel_bits, &img.line_bytes, &img.endian);
 	ft_fill_img(mlx, &img, 0xFFFFFF);
-	ft_draw_map(mlx, &img, 0x0, map_inf);
+	ft_draw_H_lines(mlx, &img, map_inf);
 	mlx_put_image_to_window(mlx, win, img.img_ptr, 0, 0);
 	ft_setup_hooks(&img, mlx, win);
 	ft_free_map(map_inf);

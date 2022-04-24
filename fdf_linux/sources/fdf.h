@@ -57,7 +57,7 @@ typedef struct t_2dMap
 
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
-void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, int color);
+void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line, t_map *map_inf);
 void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color);
 int		ft_close(int keycode, t_inf info);
 int		ft_key_press(int keycode, t_inf info);
@@ -78,5 +78,6 @@ int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
 void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf);
 int		ft_calculate_pt_dist(int map_width, int img_width, int map_height, int img_height);
+int		ft_linear_gradient(int colors[2], int altitude, int range[2]);
 
 #endif

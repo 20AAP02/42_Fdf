@@ -26,7 +26,7 @@ void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf)
             a.y = (y * pt_dist) + img_Ycenter;
             b.x = ((x + 1) * pt_dist) + img_Xcenter;
             line = ft_init_line(a.x, a.y, b.x, a.y);
-            ft_draw_line(mlx, img, line, 0);
+            ft_draw_line(mlx, img, line, map_inf);
             x++;
         }
         y++;
