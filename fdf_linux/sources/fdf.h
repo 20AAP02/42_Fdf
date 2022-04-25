@@ -88,5 +88,6 @@ int 	ft_calc_2Pt_dist(t_pt pt1, t_pt pt2);
 int		ft_getRed(int i);
 int		ft_getGreen(int	i);
 int		ft_getBlue(int	i);
+int		ft_map_width(char *str);
 
 #endif
