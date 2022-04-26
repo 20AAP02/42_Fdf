@@ -22,6 +22,9 @@ int	main(int argc, char **argv)
 	img.buffer = mlx_get_data_addr(img.img_ptr, &img.pixel_bits, &img.line_bytes, &img.endian);
 	ft_fill_img(mlx, &img, 0x0);
 	ft_draw_map(map_inf);
+	map_inf->comp_x = ft_pt_compensate_x(map_inf);
+    map_inf->comp_y = ft_pt_compensate_y(map_inf);
+	map_inf->pt_dist = ft_calc_pt_dist(&img, map_inf);
 	ft_draw_H_lines(mlx, &img, map_inf);
 	ft_draw_V_lines(mlx, &img, map_inf);
 	mlx_put_image_to_window(mlx, win, img.img_ptr, 0, 0);

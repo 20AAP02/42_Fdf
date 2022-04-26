@@ -1,14 +1,42 @@
 #include <fdf.h>
 
-int	ft_calculate_pt_dist(int map_width, int img_width, int map_height, int img_height)
+int	ft_check_pt_dist(t_img *img, t_map *map_inf, int pt_dist)
 {
-	int pt_dist;
+	int     y;
+    int     x;
+    int     z;
+    int	    y1;
+    int	    x1;
 
-	pt_dist = 0;
-	pt_dist += img_width;
-	while ((map_width * pt_dist) >= img_width)
-		pt_dist--;
-	while ((map_height * pt_dist) >= img_height)
-		pt_dist--;
-	return (pt_dist);
+    y = 0;
+    while (y < map_inf->height)
+    {
+        x = 0;
+        while (x < map_inf->width)
+        {
+            z = map_inf->map[y][x].altitude;
+            x1 = (iso(x, y, z, 0) + map_inf->comp_x) * pt_dist;
+            y1 = (iso(x, y, z, 1) + map_inf->comp_y) * pt_dist;
+            if (x1 >= img->width || y1 >= img->height)
+				return (0);
+			if (y1 < 0 || x1 < 0)
+				return (0);
+            x++;
+        }
+        y++;
+    }
+	return (1);
+}
+
+int	ft_calc_pt_dist(t_img *img, t_map *map_inf)
+{
+	int	pt_dist;
+
+	pt_dist = 1;
+	while (ft_check_pt_dist(img, map_inf, pt_dist))
+    {
+		pt_dist++;
+    }
+	return (pt_dist - 1);
+	
 }

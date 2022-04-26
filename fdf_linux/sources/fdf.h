@@ -55,8 +55,8 @@ typedef struct t_2dMap
 	int 	height;
 	int		range[2];
 	int		pt_dist;
-	int		img_Ycenter;
-	int		img_Xcenter;
+	int		comp_y;
+	int		comp_x;
 }			t_map;
 
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
@@ -82,12 +82,18 @@ int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
 void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf);
 void    ft_draw_V_lines(void *mlx, t_img *img, t_map *map_inf);
-int		ft_calculate_pt_dist(int map_width, int img_width, int map_height, int img_height);
 int		ft_linear_gradient(int colors[2], int percent);
-int 	ft_calc_2Pt_dist(t_pt pt1, t_pt pt2);
+int		ft_calc_2Pt_dist(t_pt pt1, t_pt pt2);
 int		ft_getRed(int i);
 int		ft_getGreen(int	i);
 int		ft_getBlue(int	i);
 int		ft_map_width(char *str);
+int		iso(int x, int y, int z, int check);
+int		ft_lowest_y(t_map *map_inf, int comp);
+int		ft_lowest_x(t_map *map_inf, int comp);
+int		ft_pt_compensate_x(t_map *map_inf);
+int		ft_pt_compensate_y(t_map *map_inf);
+int		ft_check_pt_dist(t_img *img, t_map *map_inf, int pt_dist);
+int		ft_calc_pt_dist(t_img *img, t_map *map_inf);
 
 #endif
