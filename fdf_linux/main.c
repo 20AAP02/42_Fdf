@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	win = mlx_new_window(mlx, img.width, img.height, "Map Generator");
 	img.img_ptr = mlx_new_image(mlx, img.width, img.height);
 	img.buffer = mlx_get_data_addr(img.img_ptr, &img.pixel_bits, &img.line_bytes, &img.endian);
-	ft_fill_img(mlx, &img, 0x0);
+	ft_fill_img(mlx, &img, 0x3b3a39);
 	ft_draw_map(map_inf);
 	map_inf->comp_x = ft_pt_compensate_x(map_inf);
     map_inf->comp_y = ft_pt_compensate_y(map_inf);
