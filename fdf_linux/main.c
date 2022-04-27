@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 	map_inf->pt_dist = ft_calc_pt_dist(&img, map_inf);
 	ft_draw_H_lines(mlx, &img, map_inf);
 	ft_draw_V_lines(mlx, &img, map_inf);
+	//ft_draw_D_lines(mlx, &img, map_inf);
+	//ft_draw_D2_lines(mlx, &img, map_inf);
 	mlx_put_image_to_window(mlx, win, img.img_ptr, 0, 0);
 	ft_setup_hooks(&img, mlx, win);
 	ft_free_map(map_inf);
