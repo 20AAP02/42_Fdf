@@ -16,7 +16,7 @@ int	ft_hex_ch_to_dec(char a)
 	else if (a == 'f' || a == 'F')
 		return (15);
 	else
-		return ((int)(a - 48));
+		return (a - 48);
 }
 
 int	ft_hexStr_toInt(char *str)
@@ -24,18 +24,16 @@ int	ft_hexStr_toInt(char *str)
 	int	n;
 	int	i;
 
-	while(*str && (*str != 'x' && *str != 'X'))
+	while(*str && *str != 'x' && *str != 'X')
 		str++;
-	while(*str && (*str == 'x' || *str == 'X'))
+	if (*str == 'x' || *str == 'X')
 		str++;
-	while(*str && *str == '0')
-		str++;
-	i = 0;
+	i = ft_strlen(str) - 1;
 	n = 0;
 	while (*str)
 	{
-		n += ft_recursive_power(ft_hex_ch_to_dec(*str), i);
-		i++;
+		n += ft_hex_ch_to_dec(*str) * ft_recursive_power(16, i);
+		i--;
 		str++;
 	}
 	return (n);

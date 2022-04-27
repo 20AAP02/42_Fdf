@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	map_inf->comp_x = ft_pt_compensate_x(map_inf);
     map_inf->comp_y = ft_pt_compensate_y(map_inf);
 	map_inf->pt_dist = ft_calc_pt_dist(&img, map_inf);
-	ft_draw_H_lines(mlx, &img, map_inf);
+	//ft_draw_H_lines(mlx, &img, map_inf);
 	ft_draw_V_lines(mlx, &img, map_inf);
 	//ft_draw_D_lines(mlx, &img, map_inf);
 	//ft_draw_D2_lines(mlx, &img, map_inf);
