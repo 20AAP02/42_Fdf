@@ -37,7 +37,8 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line)
 		vars.c_point.y = vars.y;
 		vars.dist = ft_calc_2Pt_dist(line.a, vars.c_point);
 		vars.color = ft_linear_gradient(line.colors, (vars.dist * 100) / vars.dist2);
-		ft_color_img_pixel(img, vars.pixel, vars.color, mlx_ptr);
+		if (vars.y >= 0 && vars.y < img->height && vars.x >= 0 && vars.x < img->width)
+			ft_color_img_pixel(img, vars.pixel, vars.color, mlx_ptr);
 		vars.e2 = 2 * vars.err;
 		if (vars.e2 >= vars.dy)
 		{
