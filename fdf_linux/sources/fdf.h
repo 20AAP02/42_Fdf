@@ -95,7 +95,7 @@ int		ft_pt_compensate_x(t_map *map_inf);
 int		ft_pt_compensate_y(t_map *map_inf);
 int		ft_check_pt_dist(t_img *img, t_map *map_inf, int pt_dist);
 int		ft_calc_pt_dist(t_img *img, t_map *map_inf);
-void    ft_draw_D_lines(void *mlx, t_img *img, t_map *map_inf);
-void    ft_draw_D2_lines(void *mlx, t_img *img, t_map *map_inf);
+//void    ft_draw_D_lines(void *mlx, t_img *img, t_map *map_inf);
+//void    ft_draw_D2_lines(void *mlx, t_img *img, t_map *map_inf);
 
 #endif
