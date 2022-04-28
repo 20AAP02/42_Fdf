@@ -10,7 +10,7 @@ int	main(int argc, char **argv)
 	info.map_inf = ft_read_fdf_file(argv[1]);
 	if (!info.map_inf || !info.map_inf->map)
 		return (0);
-	// Create window and such
+	// Create window and image
 	ft_win_init(&info);
 
 	// create map
