@@ -18,6 +18,7 @@ void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i)
 		{
 			str_n = ft_substr(str, a, b - a);
 			map[i][map_index].altitude = ft_atoi(str_n);
+			map[i][map_index].alt2 = map[i][map_index].altitude;
 			if (ft_memchr(str_n, ',', ft_strlen(str_n)))
 				map[i][map_index].color = ft_hexStr_toInt(ft_memchr(str_n, ',', ft_strlen(str_n)) + 1);
 			else

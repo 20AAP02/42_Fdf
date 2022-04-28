@@ -38,6 +38,7 @@ typedef struct t_point
 typedef struct t_3dPoint
 {
 	int	altitude;
+	int alt2;
 	int	color;
 }		t_3dPt;
 
@@ -58,7 +59,17 @@ typedef struct t_2dMap
 	int		comp_y;
 	int		comp_x;
 	int		zoom;
+	int		color_check;
+	int		scale;
 }			t_map;
+
+typedef struct t_winInfo
+{
+	t_map	*map_inf;
+	void	*mlx;
+	void	*win;
+	t_img	img;
+}			t_winInf;
 
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
@@ -77,7 +88,7 @@ t_map	*ft_read_fdf_file(char *file_name);
 int		ft_n_lines_file(char *file_name);
 void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i);
 void	ft_free_map(t_map *map_inf);
-void	ft_draw_map(t_map *map_inf);
+void	ft_color_map(t_map *map_inf);
 int		ft_color_mixer(int range[2], int altitude);
 int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
@@ -98,5 +109,8 @@ int		ft_check_pt_dist(t_img *img, t_map *map_inf, int pt_dist);
 int		ft_calc_pt_dist(t_img *img, t_map *map_inf);
 void    ft_draw_D_lines(void *mlx, t_img *img, t_map *map_inf);
 void    ft_draw_D2_lines(void *mlx, t_img *img, t_map *map_inf);
+void    ft_scale_altitude(t_map *map_inf);
+void    ft_draw_map(t_map *map_inf, void *mlx, void *win, t_img *img);
+void    ft_win_init(t_winInf *info);
 
 #endif
