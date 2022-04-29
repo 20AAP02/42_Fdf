@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	// create map
 	info.map_inf->scale = 0;
 	info.map_inf->zoom = 0;
+	info.map_inf->move_x = 0;
+	info.map_inf->move_y = 0;
 	ft_draw_map(info.map_inf, info.mlx, info.win, &info.img);
 
 	ft_setup_hooks(&info.img, info.mlx, info.win, info.map_inf);

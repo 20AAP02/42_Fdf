@@ -52,6 +52,8 @@ typedef struct t_2dMap
 	int		zoom;
 	int		color_check;
 	int		scale;
+	int		move_x;
+	int		move_y;
 }			t_map;
 
 typedef struct t_winInfo
