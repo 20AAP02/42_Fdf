@@ -39,13 +39,13 @@ int	ft_key_press(int keycode, t_inf *info)
 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT || keycode == KEY_DOWN || keycode == KEY_UP)
 	{
 		if (keycode == KEY_LEFT)
-			info->map_inf->move_x -= 1;
+			info->map_inf->move_x -= 10;
 		else if (keycode == KEY_RIGHT)
-			info->map_inf->move_x += 1;
+			info->map_inf->move_x += 10;
 		else if (keycode == KEY_DOWN)
-			info->map_inf->move_y += 1;
+			info->map_inf->move_y += 10;
 		else if (keycode == KEY_UP)
-			info->map_inf->move_y -= 1;
+			info->map_inf->move_y -= 10;
 		ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
 		return (0);
 	}

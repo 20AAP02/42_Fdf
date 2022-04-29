@@ -22,6 +22,10 @@ int	main(int argc, char **argv)
 	info.map_inf->zoom = 0;
 	info.map_inf->move_x = 0;
 	info.map_inf->move_y = 0;
+	info.map_inf->color_check = ft_map_color_check(info.map_inf);
+	info.map_inf->comp_x = ft_pt_compensate_x(info.map_inf);
+	info.map_inf->comp_y = ft_pt_compensate_y(info.map_inf);
+	ft_color_map(info.map_inf);
 	ft_draw_map(info.map_inf, info.mlx, info.win, &info.img);
 
 	ft_setup_hooks(&info.img, info.mlx, info.win, info.map_inf);
