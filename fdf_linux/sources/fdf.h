@@ -1,8 +1,6 @@
 #ifndef FDF_H
 # define FDF_H
 
-# define ESC 53
-
 #include <mlx.h>
 #include <math.h>
 #include <libft.h>
@@ -21,13 +19,6 @@ typedef struct t_image
 	int	width;
 	int	height;
 }		t_img;
-
-typedef struct t_info
-{
-	void	*win;
-	void	*mlx;
-	t_img	*img;
-}			t_inf;
 
 typedef struct t_point
 {
@@ -71,16 +62,24 @@ typedef struct t_winInfo
 	t_img	img;
 }			t_winInf;
 
+typedef struct t_info
+{
+	void	*win;
+	void	*mlx;
+	t_img	*img;
+	t_map	*map_inf;
+}			t_inf;
+
 void	ft_color_img_pixel(t_img *img, int pixel, int color, void *mlx);
 void	ft_fill_img(void *mlx_ptr, t_img *img, int color);
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line);
 void	ft_draw_diamond(void *mlx_ptr, t_img *img, int color);
-int		ft_close(int keycode, t_inf info);
-int		ft_key_press(int keycode, t_inf info);
-void	ft_setup_hooks(t_img *img, void *mlx, void *win);
-int		ft_mouse_move(int keycode, t_inf info);
-int		ft_mouse_press(int keycode, t_inf info);
-int		ft_mouse_release(int keycode, t_inf info);
+int		ft_close(t_inf *info);
+int		ft_key_press(int keycode, t_inf *info);
+void	ft_setup_hooks(t_img *img, void *mlx, void *win, t_map *map_inf);
+int		ft_mouse_move(int keycode, t_inf *info);
+int		ft_mouse_press(int keycode, t_inf *info);
+int		ft_mouse_release(int keycode, t_inf *info);
 t_ln	ft_init_line(int x0, int y0, int x1, int y1);
 int		ft_y_direction(t_pt a, t_pt b);
 int		ft_x_direction(t_pt a, t_pt b);
@@ -112,5 +111,6 @@ void    ft_draw_D2_lines(void *mlx, t_img *img, t_map *map_inf);
 void    ft_scale_altitude(t_map *map_inf);
 void    ft_draw_map(t_map *map_inf, void *mlx, void *win, t_img *img);
 void    ft_win_init(t_winInf *info);
+void    ft_reset_altitude(t_map *map_inf);
 
 #endif

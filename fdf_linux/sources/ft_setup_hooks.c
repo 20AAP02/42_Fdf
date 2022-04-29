@@ -1,6 +1,6 @@
 #include <fdf.h>
 
-void	ft_setup_hooks(t_img *img, void *mlx, void *win)
+void	ft_setup_hooks(t_img *img, void *mlx, void *win, t_map *map_inf)
 {
 	t_inf	*info;
 
@@ -8,7 +8,7 @@ void	ft_setup_hooks(t_img *img, void *mlx, void *win)
 	info->img = img;
 	info->mlx = mlx;
 	info->win = win;
-	mlx_hook(win, 17, 0, ft_close, info);
-	mlx_hook(win, 2, 0, ft_key_press, info);
-	free(info);
+	info->map_inf = map_inf;
+	mlx_hook(win, 17, 1L<<17, ft_close, info);
+	mlx_hook(win, 2, 1L<<0, ft_key_press, info);
 }

@@ -1,5 +1,9 @@
 #include <fdf.h>
 
+// "wasd" for changing camera view point
+// "arrows" to change center of img
+// "zx" change altitude scale
+// "+ -" to zoom
 int	main(int argc, char **argv)
 {
 	t_winInf	info;
@@ -18,8 +22,7 @@ int	main(int argc, char **argv)
 	info.map_inf->zoom = 0;
 	ft_draw_map(info.map_inf, info.mlx, info.win, &info.img);
 
-	ft_setup_hooks(&info.img, info.mlx, info.win);
-	ft_free_map(info.map_inf);
+	ft_setup_hooks(&info.img, info.mlx, info.win, info.map_inf);
 	mlx_loop(info.mlx);
 	return (0);
 }

@@ -1,12 +1,9 @@
 #include <fdf.h>
 
-int	ft_close(int keycode, t_inf info)
+int	ft_close(t_inf *info)
 {
-	if (keycode)
-		exit(0);
-	else
-		exit(0);
-	
-	printf("%p\n", &info);
+	ft_free_map(info->map_inf);
+	free(info);
+	exit(0);
 	return (0);
 }

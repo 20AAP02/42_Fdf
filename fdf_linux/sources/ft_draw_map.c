@@ -4,6 +4,7 @@ void    ft_draw_map(t_map *map_inf, void *mlx, void *win, t_img *img)
 {
     ft_fill_img(mlx, img, 0x3b3a39);
 	map_inf->color_check = ft_map_color_check(map_inf);
+	ft_reset_altitude(map_inf);
 	ft_scale_altitude(map_inf);
 	ft_color_map(map_inf);
 	map_inf->comp_x = ft_pt_compensate_x(map_inf);

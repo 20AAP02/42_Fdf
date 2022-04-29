@@ -11,8 +11,12 @@ void    ft_scale_altitude(t_map *map_inf)
         x = 0;
         while (x < map_inf->width)
         {
-            if (map_inf->map[y][x].alt2)
+            if (map_inf->map[y][x].alt2 > -map_inf->scale)
                 map_inf->map[y][x].altitude += map_inf->scale;
+            else if (map_inf->map[y][x].alt2)
+                map_inf->map[y][x].altitude = 0;
+            else if (map_inf->map[y][x].alt2 - map_inf->scale > 0)
+                map_inf->map[y][x].altitude = 0;
             else if (map_inf->map[y][x].alt2 < 0)
                 map_inf->map[y][x].altitude -= map_inf->scale;
             x++;
