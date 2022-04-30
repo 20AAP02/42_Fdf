@@ -19,10 +19,10 @@ $>cat 42.fdf
 $>
 ```
 
-Each number represents a point in space:
-• The horizontal position corresponds to its axis.
-• The vertical position corresponds to its ordinate.
-• The value corresponds to its altitude.
+Each number represents a point in space:<br>
+• The horizontal position corresponds to its axis.<br>
+• The vertical position corresponds to its ordinate.<br>
+• The value corresponds to its altitude.<br>
 
 <p>And the program would have to create a window and print the image like so</p>
 
@@ -90,29 +90,29 @@ make l
 
 <p>There's many files you can use. You can also add your own files as long they are .fdf and have the same format</p>
 
-<p>Once the window is opened, you can use:
-  • "m n" to zoom in and out.
-  • "z x" to change scale of the points altitude.
-  • "j l" to move the picture left and right.
+<p>Once the window is opened, you can use:<br>
+  • "m n" to zoom in and out.<br>
+  • "z x" to change scale of the points altitude.<br>
+  • "j l" to move the picture left and right.<br>
   • "i k" to move the picture up and down.</p>
 
 <h4>References</h4>
-https://github.com/qst0/ft_libgfx
-https://github.com/VBrazhnik/FdF/wiki
-https://gontjarow.github.io/MiniLibX/mlx-tutorial-create-image.html
-https://git.42l.fr/Fabien/fdf
-http://members.chello.at/~easyfilter/Bresenham.pdf
-https://github.com/42Paris/minilibx-linux
-https://qst0.github.io/ft_libgfx/man_mlx_loop.html
-https://harm-smits.github.io/42docs/libs/minilibx/events.html
-https://github.com/VBrazhnik/FdF/blob/master/fdf/sources/keyboard_controls.c
-https://github.com/Mohamed-Moumni/FDF
-https://github.com/VBrazhnik/FdF/wiki/How-to-handle-mouse-buttons-and-key-presses%3F
-https://www.kirupa.com/developer/actionscript/isometric_transforms.htm
-https://www.w3schools.com/colors/colors_mixer.asp
-https://github.com/Y-askour/fdf-42
-https://github.com/VBrazhnik/FdF/wiki/How-to-perform-isometric-transformations%3F
-https://raw.githubusercontent.com/VBrazhnik/FdF/master/images/key_codes.png
-https://stackoverflow.com/c/42network/images/s/1a53fce9-5a0f-46b4-9eef-545d85fcccae.png
+https://github.com/qst0/ft_libgfx <br>
+https://github.com/VBrazhnik/FdF/wiki <br>
+https://gontjarow.github.io/MiniLibX/mlx-tutorial-create-image.html <br>
+https://git.42l.fr/Fabien/fdf <br>
+http://members.chello.at/~easyfilter/Bresenham.pdf <br>
+https://github.com/42Paris/minilibx-linux <br>
+https://qst0.github.io/ft_libgfx/man_mlx_loop.html <br>
+https://harm-smits.github.io/42docs/libs/minilibx/events.html <br>
+https://github.com/VBrazhnik/FdF/blob/master/fdf/sources/keyboard_controls.c <br>
+https://github.com/Mohamed-Moumni/FDF <br>
+https://github.com/VBrazhnik/FdF/wiki/How-to-handle-mouse-buttons-and-key-presses%3F <br>
+https://www.kirupa.com/developer/actionscript/isometric_transforms.htm <br>
+https://www.w3schools.com/colors/colors_mixer.asp <br>
+https://github.com/Y-askour/fdf-42 <br>
+https://github.com/VBrazhnik/FdF/wiki/How-to-perform-isometric-transformations%3F <br>
+https://raw.githubusercontent.com/VBrazhnik/FdF/master/images/key_codes.png <br>
+https://stackoverflow.com/c/42network/images/s/1a53fce9-5a0f-46b4-9eef-545d85fcccae.png <br>
 
 <h3>This project was done according to the norminette form</h3>
