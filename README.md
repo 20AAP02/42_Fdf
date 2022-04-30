@@ -1,7 +1,7 @@
 <h1 align="center"> FDF | 42 School Project </h1>
 <h4>This project is about representing a landscape as a 3D object in which all surfaces are outlined in lines.</h4>
 <p>The perpose of the project was to read point coordenates from a file, and then throught the use of the school's library MiniLibX, draw the map froma specific viewpoint</p>
-<p>The file would look something like this</p>
+<p><b>The file would look something like this</b></p>
 
 ```
 $>cat 42.fdf
@@ -19,14 +19,14 @@ $>cat 42.fdf
 $>
 ```
 
-Each number represents a point in space:<br>
+<b>Each number represents a point in space</b>:<br>
 • The horizontal position corresponds to its axis.<br>
 • The vertical position corresponds to its ordinate.<br>
 • The value corresponds to its altitude.<br>
 
 <p>And the program would have to create a window and print the image like so</p>
 
-<p>Some files also came with color hexadecimal value of the points</p>
+<p><b>Some files also came with color hexadecimal value of the points</b></p>
 
 ```
 0  0  0  0  0  0  0  0  0  0
@@ -71,12 +71,12 @@ git clone https://github.com/20AAP02/42_Fdf.git
 cd 42_Fdf/fdf_linux
 ```
 
-<p>In mac</p>
+<b>In mac</b>
 
 ```
 make
 ```
-<p>In linux</p>
+<b>In linux</b>
 
 ```
 make l
@@ -88,9 +88,9 @@ make l
 ./fdf map/test_maps/42.fdf
 ```
 
-<p>There's many files you can use. You can also add your own files as long they are .fdf and have the same format</p>
+<p><b>There's many files you can use. You can also add your own files as long they are .fdf and have the same format</b></p>
 
-<p>Once the window is opened, you can use:<br>
+<p><b>Once the window is opened, you can use</b>:<br>
   • "m n" to zoom in and out.<br>
   • "z x" to change scale of the points altitude.<br>
   • "j l" to move the picture left and right.<br>
