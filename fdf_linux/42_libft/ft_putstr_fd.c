@@ -19,5 +19,5 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (*s)
 		if (write(fd, s++, 1))
-			continue;
+			continue ;
 }

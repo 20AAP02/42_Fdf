@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_nbr_base.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 17:53:22 by amaria-m          #+#    #+#             */
+/*   Updated: 2022/04/30 17:53:24 by amaria-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 #include <ft_printf.h>
 
@@ -19,12 +31,12 @@ int	ft_hex_ch_to_dec(char a)
 		return (a - 48);
 }
 
-int	ft_hexStr_toInt(char *str)
+int	ft_hexstr_toint(char *str)
 {
 	int	n;
 	int	i;
 
-	while(*str && *str != 'x' && *str != 'X')
+	while (*str && *str != 'x' && *str != 'X')
 		str++;
 	if (*str == 'x' || *str == 'X')
 		str++;
