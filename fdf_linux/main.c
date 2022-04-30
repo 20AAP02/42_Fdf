@@ -6,16 +6,12 @@
 /*   By: amaria-m <amaria-m@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 17:55:26 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/04/30 17:56:47 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/04/30 18:00:14 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fdf.h>
 
-// "wasd" for changing camera view point
-// "arrows" to change center of img
-// "zx" change altitude scale
-// "+ -" to zoom
 int	main(int argc, char **argv)
 {
 	t_winInf	info;
