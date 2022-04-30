@@ -1,5 +1,9 @@
 #ifndef FDF_H
 # define FDF_H
+# define WHITE 0xffffff
+# define BLACK 0x000000
+# define GREEN 0x275e00
+# define BROWN 0x7a500b
 
 #include <mlx.h>
 #include <math.h>
@@ -54,6 +58,7 @@ typedef struct t_2dMap
 	int		scale;
 	int		move_x;
 	int		move_y;
+	int		colors[2];
 }			t_map;
 
 typedef struct t_winInfo
@@ -90,7 +95,7 @@ int		ft_n_lines_file(char *file_name);
 void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i);
 void	ft_free_map(t_map *map_inf);
 void	ft_color_map(t_map *map_inf);
-int		ft_color_mixer(int range[2], int altitude);
+int		ft_color_mixer(int range[2], int altitude, t_map *map_inf);
 int		ft_map_color_check(t_map *map_inf);
 void	ft_altitude_range(t_map *map_inf);
 void    ft_draw_H_lines(void *mlx, t_img *img, t_map *map_inf);

@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	info.map_inf->zoom = 0;
 	info.map_inf->move_x = 0;
 	info.map_inf->move_y = 0;
+	info.map_inf->colors[0] = GREEN;
+	info.map_inf->colors[1] = BROWN;
 	info.map_inf->color_check = ft_map_color_check(info.map_inf);
 	info.map_inf->comp_x = ft_pt_compensate_x(info.map_inf);
 	info.map_inf->comp_y = ft_pt_compensate_y(info.map_inf);

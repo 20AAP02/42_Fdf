@@ -1,14 +1,6 @@
 #include <fdf.h>
 
-# define ESC 53 // -> click 5
-# define KEY_Z 122 // -> mac(6) linux(122)
-# define KEY_X 120 // -> mac(7) linux(122)
-# define KEY_N 45 // click -
-# define KEY_M 46 // click .
-# define KEY_LEFT 106 // -> mac(123) linux(106)
-# define KEY_RIGHT 108 // -> mac(124) linux(108)
-# define KEY_DOWN 107 // -> mac(125) linux(107)
-# define KEY_UP 105 // -> mac(126) linux(105)
+// xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 
 int	ft_key_press(int keycode, t_inf *info)
 {
@@ -27,9 +19,9 @@ int	ft_key_press(int keycode, t_inf *info)
 		ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
 		return (0);
 	}
-	if (keycode == KEY_N || keycode == KEY_M)
+	if (keycode == KEY_PLUS || keycode == KEY_MINUS)
 	{
-		if (keycode == KEY_N)
+		if (keycode == KEY_PLUS)
 			info->map_inf->zoom += 1;
 		else
 			info->map_inf->zoom -= 1;
@@ -48,6 +40,34 @@ int	ft_key_press(int keycode, t_inf *info)
 			info->map_inf->move_y -= 10;
 		ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
 		return (0);
+	}
+	if (keycode == KEY_SPACE)
+	{
+		if (info->map_inf->color_check)
+			info->map_inf->color_check = 0;
+		else
+			info->map_inf->color_check = 1;
+		ft_color_map(info->map_inf);
+		ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
+	}
+	if (keycode == KEY_B)
+	{
+		if (info->map_inf->color_check)
+		{
+			info->map_inf->color_check = 0;
+		}
+		else if (info->map_inf->colors[0] != BLACK)
+		{
+			info->map_inf->colors[0] = BLACK;
+			info->map_inf->colors[1] = WHITE;
+		}
+		else
+		{
+			info->map_inf->colors[0] = GREEN;
+			info->map_inf->colors[1] = BROWN;
+		}
+		ft_color_map(info->map_inf);
+		ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
 	}
 	return (0);
 }

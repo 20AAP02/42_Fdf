@@ -1,19 +1,13 @@
 #include <fdf.h>
 
-#define WHITE 0xffffff;
-#define BLACK 0x000000;
-#define GREEN 0x275e00;
-#define BROWN 0x7a500b;
-#define GREEN 0x275e00;
-
-int	ft_color_mixer(int range[2], int altitude)
+int	ft_color_mixer(int range[2], int altitude, t_map *map_inf)
 {
 	int	percent;
 	int	dist;
 	int	color[2];
 
-	color[0] = BLACK;
-	color[1] = WHITE;
+	color[0] = map_inf->colors[0];
+	color[1] = map_inf->colors[1];
 	if (altitude == range[0])
 		return (color[0]);
 	if (altitude == range[1])
