@@ -28,7 +28,7 @@ $>
 
 ![42](https://github.com/20AAP02/42_Fdf/blob/main/imgs/Screenshot%202022-04-30%20at%2012-58-14%20en.subject.pdf.png)
 
-<p><b>Some files also came with color hexadecimal value of the points</b></p>
+<p><b>Some files also come with color hexadecimal value of the points</b></p>
 
 ```
 0  0  0  0  0  0  0  0  0  0
@@ -93,10 +93,13 @@ make l
 <p><b>There's many files you can use. You can also add your own files as long they are .fdf and have the same format</b></p>
 
 <p><b>Once the window is opened, you can use</b>:<br>
-  • "m n" to zoom in and out.<br>
+  • "+ -" to zoom in and out.<br>
   • "z x" to change scale of the points altitude.<br>
-  • "j l" to move the picture left and right.<br>
-  • "i k" to move the picture up and down.</p>
+  • "a d / arrows" to move the picture left and right.<br>
+  • "w s / arrows" to move the picture up and down.<br>
+  • "b" to change to black and white<br>
+  • "SPACE" to eliminate the colores that came with the map<br></p>
+  • "esc" to close or "q" in linux<br>
 
 <h4>References</h4>
 https://github.com/qst0/ft_libgfx <br>
