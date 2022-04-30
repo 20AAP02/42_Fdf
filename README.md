@@ -25,7 +25,8 @@ $>
 • The value corresponds to its altitude.<br>
 
 <p>And the program would have to create a window and print the image like so</p>
-![Alt text](https://github.com/20AAP02/42_Fdf/blob/main/imgs/Screenshot%202022-04-30%20at%2012-58-14%20en.subject.pdf.png?raw=true "42")
+
+![42](https://github.com/20AAP02/42_Fdf/blob/main/imgs/Screenshot%202022-04-30%20at%2012-58-14%20en.subject.pdf.png)
 
 <p><b>Some files also came with color hexadecimal value of the points</b></p>
 
