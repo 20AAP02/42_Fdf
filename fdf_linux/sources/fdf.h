@@ -6,7 +6,7 @@
 /*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:02:42 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/05/02 16:57:16 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:15:18 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int		ft_y_direction(t_pt a, t_pt b);
 int		ft_x_direction(t_pt a, t_pt b);
 t_map	*ft_read_fdf_file(char *file_name);
 int		ft_n_lines_file(char *file_name);
-void	ft_cpy_ln_to_intarr(t_3dPt **map, char *str, int i);
+char	*ft_cpy_ln_to_intarr(t_3dPt **map, char *str, int i);
 void	ft_free_map(t_map *map_inf);
 void	ft_color_map(t_map *map_inf);
 int		ft_color_mixer(int range[2], int altitude, t_map *map_inf);

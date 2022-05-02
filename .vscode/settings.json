@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"sstream": "c",
-		"fdf.h": "c"
+		"fdf.h": "c",
+		"algorithm": "c"
 	}
 }

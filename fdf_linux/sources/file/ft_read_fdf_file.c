@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_read_fdf_file.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/02 18:09:16 by amaria-m          #+#    #+#             */
+/*   Updated: 2022/05/02 18:17:02 by amaria-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fdf.h>
 
 t_map	*ft_read_fdf_file(char *file_name)
@@ -8,8 +20,6 @@ t_map	*ft_read_fdf_file(char *file_name)
 	int		fd;
 	int		i;
 
-	if (!file_name || *file_name == 0)
-		return (NULL);
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
@@ -22,10 +32,8 @@ t_map	*ft_read_fdf_file(char *file_name)
 	while (str)
 	{
 		map_inf->map[i] = malloc(sizeof(t_3dPt) * map_inf->width);
-		ft_cpy_ln_to_intarr(map_inf->map, str, i);
-		free(str);
+		free(ft_cpy_ln_to_intarr(map_inf->map, str, i++));
 		str = get_next_line(fd);
-		i++;
 	}
 	map_inf->height = i;
 	free(str);
