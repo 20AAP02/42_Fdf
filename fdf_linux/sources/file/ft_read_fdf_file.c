@@ -22,7 +22,7 @@ t_map	*ft_read_fdf_file(char *file_name)
 	while (str)
 	{
 		map_inf->map[i] = malloc(sizeof(t_3dPt) * map_inf->width);
-		ft_cpy_ln_to_intArr(map_inf->map, str, i);
+		ft_cpy_ln_to_intarr(map_inf->map, str, i);
 		free(str);
 		str = get_next_line(fd);
 		i++;

@@ -1,7 +1,5 @@
 #include <fdf.h>
 
-// xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-
 int	ft_key_press(int keycode, t_inf *info)
 {
 	if (keycode == ESC)

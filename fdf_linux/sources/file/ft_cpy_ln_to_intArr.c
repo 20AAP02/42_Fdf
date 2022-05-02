@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cpy_ln_to_intArr.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/02 16:57:18 by amaria-m          #+#    #+#             */
+/*   Updated: 2022/05/02 17:19:02 by amaria-m         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fdf.h>
 
-void	ft_cpy_ln_to_intArr(t_3dPt **map, char *str, int i)
+void	ft_cpy_ln_to_intarr(t_3dPt **map, char *str, int i)
 {
 	int		a;
 	int		b;
