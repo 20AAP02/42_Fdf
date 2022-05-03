@@ -67,6 +67,7 @@ https://github.com/20AAP02/42_Fdf/blob/main/en.subject.pdf
 <h4>How to use</h4>
 
 <h5>Cloning and compiling</h5>
+<p>The intra folder is the one that was delivered but it only works on mac</p>
 
 ```
 git clone https://github.com/20AAP02/42_Fdf.git
