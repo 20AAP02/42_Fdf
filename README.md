@@ -58,9 +58,9 @@ https://github.com/20AAP02/42_Fdf/blob/main/en.subject.pdf
 
 -----
 
-<h4>Grade : %</h4>
-<h6>Mandatory : /100</h6>
-<h6>Bonus : /25</h6>
+<h4>Grade : 110%</h4>
+<h6>Mandatory : 100/100</h6>
+<h6>Bonus : 10/25</h6>
 
 -----
 
@@ -70,7 +70,7 @@ https://github.com/20AAP02/42_Fdf/blob/main/en.subject.pdf
 
 ```
 git clone https://github.com/20AAP02/42_Fdf.git
-cd 42_Fdf/fdf_linux
+cd 42_Fdf/fdf_dir
 ```
 
 <b>In mac</b>
@@ -87,7 +87,7 @@ make l
 <h5>Use</h5>
 
 ```
-./fdf map/test_maps/42.fdf
+./fdf maps/test_maps/42.fdf
 ```
 
 <p><b>There's many files you can use. You can also add your own files as long they are .fdf and have the same format</b></p>
