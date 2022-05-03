@@ -6,19 +6,11 @@
 /*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 18:28:26 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/05/02 18:52:57 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:14:57 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fdf.h>
-
-void	ft_esc(t_inf *info)
-{
-	ft_free_map(info->map_inf);
-	free(info);
-	system("leaks -- fdf");
-	exit(0);
-}
 
 int	ft_zx(int keycode, t_inf *info)
 {
@@ -26,16 +18,6 @@ int	ft_zx(int keycode, t_inf *info)
 		info->map_inf->scale += 1;
 	else
 		info->map_inf->scale -= 1;
-	ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
-	return (0);
-}
-
-int	ft_zoom(int keycode, t_inf *info)
-{
-	if (keycode == KEY_PLUS)
-		info->map_inf->zoom += 1;
-	else
-		info->map_inf->zoom -= 1;
 	ft_draw_map(info->map_inf, info->mlx, info->win, info->img);
 	return (0);
 }
@@ -94,7 +76,9 @@ int	ft_key_press(int keycode, t_inf *info)
 		return (ft_zx(keycode, info));
 	if (keycode == KEY_PLUS || keycode == KEY_MINUS)
 		return (ft_zoom(keycode, info));
-	if (keycode == KEY_LEFT || keycode == KEY_RIGHT || keycode == KEY_DOWN || keycode == KEY_UP)
+	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
+		return (ft_move(keycode, info));
+	if (keycode == KEY_DOWN || keycode == KEY_UP)
 		return (ft_move(keycode, info));
 	if (keycode == KEY_SPACE)
 		return (ft_space(info));

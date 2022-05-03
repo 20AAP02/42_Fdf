@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close.c                                         :+:      :+:    :+:   */
+/*   ft_reset_altitude.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 18:17:43 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/05/02 18:50:45 by amaria-m         ###   ########.fr       */
+/*   Created: 2022/05/03 16:22:29 by amaria-m          #+#    #+#             */
+/*   Updated: 2022/05/03 16:22:38 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fdf.h>
 
-int	ft_close(t_inf *info)
+void	ft_reset_altitude(t_map *map_inf)
 {
-	ft_free_map(info->map_inf);
-	free(info);
-	system("leaks -- fdf");
-	exit(0);
-	return (0);
+	int	y;
+	int	x;
+
+	y = 0;
+	while (y < map_inf->height)
+	{
+		x = 0;
+		while (x < map_inf->width)
+		{
+			map_inf->map[y][x].altitude = map_inf->map[y][x].alt2;
+			x++;
+		}
+		y++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:48:32 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/05/02 15:55:09 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:18:17 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_dl_block1(t_line_vars *vars, t_ln line)
 	vars->sy = ft_y_direction(line.a, line.b);
 	vars->x = line.a.x;
 	vars->y = line.a.y;
-	vars->dist2 = ft_calc_2Pt_dist(line.a, line.b);
+	vars->dist2 = ft_calc_2pt_dist(line.a, line.b);
 }
 
 void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line)
@@ -51,7 +51,7 @@ void	ft_draw_line(void *mlx_ptr, t_img *img, t_ln line)
 		vars.pixel = (vars.y * img->line_bytes) + (vars.x * 4);
 		vars.c_point.x = vars.x;
 		vars.c_point.y = vars.y;
-		vars.dist = ft_calc_2Pt_dist(line.a, vars.c_point) * 100;
+		vars.dist = ft_calc_2pt_dist(line.a, vars.c_point) * 100;
 		vars.color = ft_linear_gradient(line.colors, vars.dist / vars.dist2);
 		if (vars.y >= 0 && vars.y < img->height)
 			if (vars.x >= 0 && vars.x < img->width)

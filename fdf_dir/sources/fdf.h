@@ -6,7 +6,7 @@
 /*   By: amaria-m <amaria-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 15:02:42 by amaria-m          #+#    #+#             */
-/*   Updated: 2022/05/02 18:15:18 by amaria-m         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:18:17 by amaria-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	ft_altitude_range(t_map *map_inf);
 void	ft_draw_h_lines(void *mlx, t_img *img, t_map *map_inf);
 void	ft_draw_v_lines(void *mlx, t_img *img, t_map *map_inf);
 int		ft_linear_gradient(int colors[2], int percent);
-int		ft_calc_2Pt_dist(t_pt pt1, t_pt pt2);
+int		ft_calc_2pt_dist(t_pt pt1, t_pt pt2);
 float	ft_get_red(int i);
 float	ft_get_green(int i);
 float	ft_get_blue(int i);
@@ -126,5 +126,7 @@ void	ft_scale_altitude(t_map *map_inf);
 void	ft_draw_map(t_map *map_inf, void *mlx, void *win, t_img *img);
 void	ft_win_init(t_winInf *info);
 void	ft_reset_altitude(t_map *map_inf);
+void	ft_esc(t_inf *info);
+int		ft_zoom(int keycode, t_inf *info);
 
 #endif
